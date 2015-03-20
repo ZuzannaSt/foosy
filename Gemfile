@@ -45,10 +45,13 @@ group :development, :test do
   gem 'spring'
 end
 
-group :test do
-  gem 'capybara'
+group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+end
+
+group :test do
+  gem 'capybara'
 end
 
 gem 'pry-rails', :group => :development
