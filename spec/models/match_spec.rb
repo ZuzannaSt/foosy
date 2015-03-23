@@ -7,4 +7,7 @@ describe Match do
   it { should respond_to(:date) }
   it { should be_valid }
 
+  it { should have_many(:player_matches) }
+  it { should have_many(:players).through(:player_matches) }
+
 end
