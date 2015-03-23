@@ -5,4 +5,8 @@ class Player < ActiveRecord::Base
   def full_name
     "#{first_name} #{last_name}"
   end
+
+  def score
+    player_matches[0].result.to_i
+  end
 end
