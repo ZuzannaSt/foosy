@@ -22,4 +22,21 @@ describe Player do
   it "full name should be John Doe" do
     expect(@player.full_name).to eq('John Doe')
   end
+
+  before(:each) { @match = build(:match) }
+  before(:each) { @player.matches = [@match] }
+
+  it "should return score" do
+    expect(@player.score).to eq(0)
+  end
+  
+  it "should score a goal" do
+    @player.goal!
+    expect(@player.score).to eq(1)
+  end
+
+  it "should win the game" do
+    10.times{ @player.goal! }
+    expect(@player.has_won?).to eq(true)
+  end
 end
