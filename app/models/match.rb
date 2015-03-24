@@ -1,4 +1,6 @@
 class Match < ActiveRecord::Base
+  validates :date, presence: true
+
   before_save :has_two_players?
 
   has_many :player_matches

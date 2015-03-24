@@ -2,7 +2,7 @@ FactoryGirl.define do
   factory :player_one, class: Player do
     first_name "John"
     last_name "Doe"
-end
+  end
 
   factory :player_two, class: Player do
     first_name "Jane"
