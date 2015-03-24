@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
   resources :players
-  resources :matches
+  resources :matches do 
+    put 'first_player_goal', on: :member
+    put 'second_player_goal', on: :member
+  end
+
 
   root 'matches#index'
 

@@ -3,11 +3,27 @@
 <div>
   <%= @first_player.full_name %><br>
   <%= @first_player.score %>
+  <% if @first_player.has_won? %>
+    <h4> WINNER </h4>
+    <% @match.finish %>
+  <% elsif @second_player.has_won? %>
+    <h4> looser </h4>
+  <% else %>
+    <%= button_to "Goal!", first_player_goal_match_path(@match), method: 'put' %>
+  <% end %>
 </div>
 
 <div>
   <%= @second_player.full_name %><br>
   <%= @second_player.score %>
+  <% if @second_player.has_won? %>
+    <h4> WINNER </h4>
+    <% @match.finish %>
+  <% elsif @first_player.has_won? %>
+    <h4> looser </h4>
+  <% else %>
+    <%= button_to "Goal!", second_player_goal_match_path(@match), method: 'put' %>
+  <% end %>
 </div>
 
 
