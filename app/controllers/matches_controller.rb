@@ -1,14 +1,12 @@
 class MatchesController < ApplicationController
   before_action :set_match, only: [:show, :first_player_goal, :second_player_goal]
+  before_action :set_players, only: [:show, :first_player_goal, :second_player_goal]
 
   def index
     @matches = Match.all  
   end
 
   def show
-    @match = Match.find(params[:id])
-    @first_player = @match.players.first
-    @second_player = @match.players.last
   end
 
   def new
@@ -30,12 +28,12 @@ class MatchesController < ApplicationController
   end
 
   def first_player_goal
-    @first_player.goal!
+    @first_player.goal!(@match)
     redirect_to @match, notice: 'Goal for the first player!'
   end
 
   def second_player_goal
-    @second_player.goal!
+    @second_player.goal!(@match)
     redirect_to @match, notice: 'Goal for the second player!'
   end
 
@@ -46,6 +44,9 @@ class MatchesController < ApplicationController
 
     def set_match
       @match = Match.find(params[:id])
+    end
+
+    def set_players
       @first_player = @match.players.first
       @second_player = @match.players.last
     end

@@ -1,4 +1,12 @@
 <h1>Matches</h1>
-<ul><%= @matches.each do |match| %>
-<li><%= match.date %></li>
-<% end %>
+<ul>
+  <% @matches.each do |match| %>
+    <li><%= match.date.to_formatted_s(:long) %>
+      <ul>
+        <% match.players.each do |player| %>
+          <li><%= player.full_name %>  <%= player.score(match) %></li>
+        <%end%>
+      </ul>
+    </li>
+  <% end %>
+</ul>

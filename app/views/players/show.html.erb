@@ -1,0 +1,10 @@
+<h1> Player </h1>
+
+<div>
+  <%= image_tag @player.avatar.url(:medium) %>
+  <%= @player.full_name %>
+  <% @player.matches.each do |match| %>
+    <%= match.date.to_formatted_s(:long) %>
+    <%= @player.score(match) %>
+  <% end %>
+</div>

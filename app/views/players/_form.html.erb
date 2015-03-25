@@ -1,0 +1,21 @@
+<%= form_for @player do |f| %>
+  <%= render 'layouts/error_messages', object: @player %>
+
+  <div>
+    First name
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div>
+    Last name
+    <%= f.text_field :last_name %>
+  </div>
+
+  <div>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div>
+  <%= f.submit %>
+  </div>
+<% end %>

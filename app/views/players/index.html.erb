@@ -1,0 +1,13 @@
+<h1>Players</h1>
+<ul>
+  <% @players.each do |player| %>
+    <li>
+      <%= link_to player.full_name, player  %>  
+      <ul>
+        <% player.matches.each do |match| %>
+          <li><%= player.score(match) %>  <%= match.date.to_formatted_s(:long) %></li>
+        <%end%>
+      </ul>
+    </li>
+  <% end %>
+</ul>
