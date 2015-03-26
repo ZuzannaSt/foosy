@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'ranking' => 'rankings#index'
   resources :players
   resources :matches do 
     put 'first_player_goal', on: :member

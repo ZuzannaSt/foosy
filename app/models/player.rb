@@ -37,4 +37,38 @@ class Player < ActiveRecord::Base
   def has_won?(match)
     score(match) == 10
   end
+
+  def matches_played
+    matches.count
+  end
+
+  def matches_won
+    matches_won = []
+
+    matches.each do |match|
+      if has_won?(match)
+        matches_won << match
+      end
+    end
+    matches_won.count
+  end
+
+  def win_rate
+    if matches_played == 0
+      0
+    else
+      (matches_won.to_f / matches_played.to_f).round(2)
+    end
+  end
+
+  def won_today
+    won_today = []
+
+    matches.played_today.each do |match|
+      if has_won?(match)
+      won_today << match
+      end
+    end
+    won_today.count
+  end
 end

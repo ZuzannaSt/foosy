@@ -9,7 +9,7 @@
         <ul class="list-unstyled">
         <li>
           <span class="badge"><%= @player.score(match) %></span> 
-          <%= match.date.to_formatted_s(:long) %>
+          <%= link_to match.date.to_formatted_s(:long), match %>
         </li>
       </ul>
       <% end %>

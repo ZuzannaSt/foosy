@@ -7,7 +7,8 @@ class Match < ActiveRecord::Base
 
   before_save :has_two_players?
   
-  scope :ongoing, -> { where("date > ?", Time.now )}
+  scope :most_recent, -> { order(created_at: :desc).limit(10) }
+  scope :played_today, -> { where("date >= ? AND date < ?", Date.today, Date.tomorrow) }
 
   def has_two_players?
     players.length == 2

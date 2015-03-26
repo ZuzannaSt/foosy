@@ -3,7 +3,7 @@
   <div class="row">
       <div class="col-md-6">
         <%= image_tag @first_player.avatar.url(:thumb), class: "img-circle" %>
-        <h3><%= @first_player.full_name %></h3>
+        <h3><%= link_to @first_player.full_name, @first_player %></h3>
         <h1><%= @first_player.score(@match) %></h1>
         <% if @first_player.has_won?(@match) %>
         <h4> WINNER </h4>
@@ -17,7 +17,7 @@
 
     <div class="col-md-6">
         <%= image_tag @second_player.avatar.url(:thumb), class: "img-circle" %>
-        <h3><%= @second_player.full_name %></h3>
+        <h3><%= link_to @second_player.full_name, @second_player %></h3>
         <h1><%= @second_player.score(@match) %></h1>
         <% if @second_player.has_won?(@match) %>
         <h4> WINNER </h4>
