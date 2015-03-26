@@ -1,10 +1,19 @@
-<h1> Player </h1>
-
-<div>
-  <%= image_tag @player.avatar.url(:medium) %>
-  <%= @player.full_name %>
-  <% @player.matches.each do |match| %>
-    <%= match.date.to_formatted_s(:long) %>
-    <%= @player.score(match) %>
-  <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 col-offset-1">
+      <%= image_tag @player.avatar.url(:medium), class: "img-circle" %>
+    </div>
+    <div class="col-md-7">
+      <h1><%= @player.full_name %></h1>
+        <% @player.matches.each do |match| %>
+        <ul class="list-unstyled">
+        <li>
+          <span class="badge"><%= @player.score(match) %></span> 
+          <%= match.date.to_formatted_s(:long) %>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
 </div>

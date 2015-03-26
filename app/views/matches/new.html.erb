@@ -1,17 +1,19 @@
-<h1> Create match </h1>
+<div class="container">
+  <h1> Create match </h1>
 
-<%= form_for @match do |f| %>
+  <%= form_for @match do |f| %>
   <%= render 'layouts/error_messages', object: @match %>
 
-<div>
-  Choose two players
-  <%= f.collection_check_boxes :player_ids, Player.all, :id, :full_name %>
-</div>
+  <div>
+    Choose two players
+    <%= f.collection_check_boxes :player_ids, Player.all, :id, :full_name %>
+  </div>
 
-<div>
-  Pick a starting date
-  <%= f.datetime_select :date %>
-</div>
+  <div>
+    Pick a starting date
+    <%= f.datetime_select :date %>
+  </div>
 
   <%= f.submit %>
-<% end %>
+  <% end %>
+</div>

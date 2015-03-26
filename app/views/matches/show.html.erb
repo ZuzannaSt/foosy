@@ -1,29 +1,32 @@
-<h1> Match </h1>
+<h1 class="text-center"> Game on! </h1>
+<div class="container text-center"> 
+  <div class="row">
+      <div class="col-md-6">
+        <%= image_tag @first_player.avatar.url(:thumb), class: "img-circle" %>
+        <h3><%= @first_player.full_name %></h3>
+        <h1><%= @first_player.score(@match) %></h1>
+        <% if @first_player.has_won?(@match) %>
+        <h4> WINNER </h4>
+        <% @match.finish %>
+        <% elsif @second_player.has_won?(@match) %>
+        <h4> looser </h4>
+        <% else %>
+        <%= button_to "Goal!", first_player_goal_match_path(@match), method: 'put' %>
+        <% end %>
+    </div>
 
-<div>
-  <%= @first_player.full_name %><br>
-  <%= @first_player.score(@match) %>
-  <% if @first_player.has_won?(@match) %>
-    <h4> WINNER </h4>
-    <% @match.finish %>
-  <% elsif @second_player.has_won?(@match) %>
-    <h4> looser </h4>
-  <% else %>
-    <%= button_to "Goal!", first_player_goal_match_path(@match), method: 'put' %>
-  <% end %>
+    <div class="col-md-6">
+        <%= image_tag @second_player.avatar.url(:thumb), class: "img-circle" %>
+        <h3><%= @second_player.full_name %></h3>
+        <h1><%= @second_player.score(@match) %></h1>
+        <% if @second_player.has_won?(@match) %>
+        <h4> WINNER </h4>
+        <% @match.finish %>
+        <% elsif @first_player.has_won?@match %>
+        <h4> looser </h4>
+        <% else %>
+        <%= button_to "Goal!", second_player_goal_match_path(@match), method: 'put' %>
+        <% end %>
+    </div>
 </div>
-
-<div>
-  <%= @second_player.full_name %><br>
-  <%= @second_player.score(@match) %>
-  <% if @second_player.has_won?(@match) %>
-    <h4> WINNER </h4>
-    <% @match.finish %>
-  <% elsif @first_player.has_won?@match %>
-    <h4> looser </h4>
-  <% else %>
-    <%= button_to "Goal!", second_player_goal_match_path(@match), method: 'put' %>
-  <% end %>
 </div>
-
-
