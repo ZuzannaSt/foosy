@@ -11,7 +11,7 @@
         <% elsif @second_player.has_won?(@match) %>
         <h4 id="first_lost"> looser </h4>
         <% else %>
-        <%= button_to "Goal!", first_player_goal_match_path(@match), method: 'put', id: 'first_player_goal' %>
+        <%= button_to "Goal!", first_player_goal_match_path(@match), method: 'put', id: 'first_player_goal', class: "btn btn-default btn-lg" %>
         <% end %>
     </div>
 
@@ -25,8 +25,7 @@
         <% elsif @first_player.has_won?@match %>
         <h4 id="second_lost"> looser </h4>
         <% else %>
-        <%= button_to "Goal!", second_player_goal_match_path(@match), method: 'put', id: 'second_player_goal' %>
+        <%= button_to "Goal!", second_player_goal_match_path(@match), method: 'put', id: 'second_player_goal', class: "btn btn-default btn-lg" %>
         <% end %>
     </div>
-</div>
 </div>

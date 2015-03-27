@@ -4,11 +4,16 @@
       <%= image_tag @player.avatar.url(:medium), class: "img-circle" %>
     </div>
     <div class="col-md-7">
-      <h1><%= @player.full_name %></h1>
-        <% @player.matches.each do |match| %>
-        <ul class="list-unstyled">
+      <h1>
+        <%= @player.full_name %>
+        <%= link_to edit_player_path(@player), class: "btn btn-default button-xs" do %>
+        <span class="glyphicon glyphicon-pencil"></span>
+        <% end %>
+      </h1>
+      <% @player.matches.each do |match| %>
+      <ul class="list-unstyled">
         <li>
-          <span class="badge"><%= @player.score(match) %></span> 
+          <span class="badge badge-large"><%= @player.score(match) %></span> 
           <%= link_to match.date.to_formatted_s(:long), match %>
         </li>
       </ul>

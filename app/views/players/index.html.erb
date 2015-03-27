@@ -1,15 +1,24 @@
 <div class="container">
   <h1>Players</h1>
-  <ul>
-    <% @players.each do |player| %>
-    <li>
-      <%= link_to player.full_name, player  %>  
-      <ul>
+
+  <% @players.each_slice(4) do |slice| %>
+  <div class="row  text-center">
+    <% slice.each do |player| %>
+    <div class="col-md-3">
+    <%= image_tag player.avatar.url(:thumb), class: "img-circle" %>
+    <h4><%= link_to player.full_name, player  %></h4>
+      <ul class="list-group list-unstyled">
         <% player.matches.each do |match| %>
-        <li><%= player.score(match) %>  <%= match.date.to_formatted_s(:long) %></li>
+        <li class="list-group-item">
+          <span class="badge"><%= player.score(match) %></span>  
+          <%= link_to match.date.to_formatted_s(:long), match %>
+        </li>
+
         <%end%>
       </ul>
-    </li>
+    </div>
     <% end %>
-  </ul>
+  </div>
+  <% end %>
+
 </div>
