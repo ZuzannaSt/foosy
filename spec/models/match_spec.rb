@@ -35,5 +35,4 @@ describe Match do
 
     expect(updated_date).not_to eq(date)
   end
-
 end

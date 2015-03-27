@@ -1,11 +1,6 @@
 describe Player do
 
-  before(:each) { @player = build(:player_one) }  
-
-  def set_player_matches
-    @match = build(:match)
-    @player.matches = [@match]
-  end
+  before(:each) { @player = build(:player_one) } 
 
   subject { @player }
 
@@ -46,22 +41,5 @@ describe Player do
 
   it "full name should be John Doe" do
     expect(@player.full_name).to eq('John Doe')
-  end
-
-  it "should return score" do 
-    set_player_matches
-    expect(@player.score).to eq(0)
-  end
-  
-  it "should score a goal" do
-    set_player_matches
-    @player.goal!
-    expect(@player.score).to eq(1)
-  end
-
-  it "should win the game" do
-    set_player_matches
-    10.times{ @player.goal! }
-    expect(@player.has_won?).to eq(true)
   end
 end

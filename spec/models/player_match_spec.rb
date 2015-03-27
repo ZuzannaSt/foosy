@@ -6,14 +6,15 @@ describe PlayerMatch do
 
   it { should respond_to(:result) }
   it { should be_valid } 
-
-  it "should have #result" do
+  
+   it "should update #result" do
     @player_match.result = nil
-    expect(@player_match).to_not be_valid
+    expect { @player_match.set_result }.to change(@player_match, :result).from(nil).to(0)
   end
 
   it "#result should be numerical" do
-    @player_match.result = "Meh"
-    expect(@player_match).to_not be_valid
+    @player_match.result = 123
+    expect(@player_match).to be_valid
   end
+
 end

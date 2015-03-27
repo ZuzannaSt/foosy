@@ -1,4 +1,5 @@
 FactoryGirl.define do
+
   factory :player_match_one, class: PlayerMatch do
     result 0
   end

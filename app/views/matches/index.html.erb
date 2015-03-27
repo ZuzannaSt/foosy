@@ -2,7 +2,7 @@
   <h1>Matches</h1>
   <ul>
     <% @matches.each do |match| %>
-    <li><%= link_to match.date.to_formatted_s(:long), match %>
+    <li><%= link_to match.date.to_formatted_s(:long), match, id: 'match_date' %>
       <ul>
         <% match.players.each do |player| %>
         <li><%= link_to player.full_name, player %>  <%= player.score(match) %></li>
