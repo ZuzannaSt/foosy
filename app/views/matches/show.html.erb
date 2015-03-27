@@ -1,4 +1,8 @@
-<h1 class="text-center"> Game on! </h1>
+<% if @first_player.has_won?(@match) || @second_player.has_won?(@match) %>
+    <h1 class="text-center"> Finished </h1>
+<% else %>
+    <h1 class="text-center"> Game on! </h1>
+<% end %>
 <div class="container text-center"> 
   <div class="row">
       <div class="col-md-6">

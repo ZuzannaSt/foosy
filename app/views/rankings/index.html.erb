@@ -1,13 +1,43 @@
-<div class="container">
-  <div class="well">
-    <h1> Top players </h1>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="well">
+        <h1> Top of all time </h1>
 
-    <div>
-      <% @players.each do |player| %>
-      <h4>
-        <%= link_to player.full_name, player %>
-      </h4>
-      <% end %>
+        <div>
+          <% @top_players.each do |player| %>
+          <%= image_tag player.avatar.url(:thumb), class: "img-circle" %>
+          <h4>
+            <%= link_to player.full_name, player %>
+          </h4>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="well">
+      <h2> Top of the day </h2>
+        <div>
+          <% @top_day.each do |player| %>
+          <h4>
+            <%= link_to player.full_name, player %>
+          </h4>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="well">
+        <h2> Most active </h2>
+        <div>
+          <% @top_active.each do |player| %>
+          <h4>
+            <%= link_to player.full_name, player %>
+          </h4>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
