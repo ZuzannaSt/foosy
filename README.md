@@ -19,5 +19,8 @@ This is a simple app for tracking your foosball games and ranking players.
 
 * <tt>rspec</tt> to check if tests are passing
 
+#Live on Heroku!
+http://foosy.herokuapp.com
+
 # Cheers!
 
