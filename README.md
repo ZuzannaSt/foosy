@@ -2,8 +2,7 @@
 Your new favourite foosball tracker.
 
 # ABOUT
-
-This is a simple app for tracking your foosball games and ranking players. 
+Application that allows you to track foosball games. Create players and games and score up to 10 goals to win. View ranking page for top players of the day and of all time and make sure you are the most active player of the day! Styled with Bootstrap, tested with RSpec.
 
 # CONFIGURE:
 
