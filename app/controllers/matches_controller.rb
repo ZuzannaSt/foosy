@@ -3,7 +3,7 @@ class MatchesController < ApplicationController
   before_action :set_players, only: [:show, :first_player_goal, :second_player_goal]
 
   def index
-    @matches = Match.all.order( "date DESC" ).paginate(:per_page => 10, :page => params[:page])  
+    @matches = Match.all.order( "date DESC" ).paginate(:per_page => 10, :page => params[:page])
   end
 
   def show
@@ -29,15 +29,21 @@ class MatchesController < ApplicationController
 
   def first_player_goal
     @first_player.goal!(@match)
-    redirect_to @match, flash: { success: 'Goal for the first player!' }
+    respond_to do |format|
+      format.html { redirect_to @match, flash: { success: 'Goal for the first player!' } }
+      format.js
+    end
   end
 
   def second_player_goal
     @second_player.goal!(@match)
-    redirect_to @match, flash: { success: 'Goal for the second player!' }
+    respond_to do |format|
+      format.html { redirect_to @match, flash: { success: 'Goal for the second player!' } }
+      format.js
+    end
   end
 
-  private    
+  private
     def match_params
       params.require(:match).permit(:date, player_ids:[])
     end

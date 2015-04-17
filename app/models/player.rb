@@ -36,7 +36,7 @@ class Player < ActiveRecord::Base
   end
 
   def has_won?(match)
-    score(match) == 10
+    score(match) >= 10
   end
 
   def matches_played
