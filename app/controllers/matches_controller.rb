@@ -29,16 +29,20 @@ class MatchesController < ApplicationController
 
   def first_player_goal
     @first_player.goal!(@match)
+    flash[:success] = 'Goal for the first player!'
+
     respond_to do |format|
-      format.html { redirect_to @match, flash: { success: 'Goal for the first player!' } }
+      format.html { redirect_to @match }
       format.js
     end
   end
 
   def second_player_goal
     @second_player.goal!(@match)
+    flash[:success] = 'Goal for the second player!'
+
     respond_to do |format|
-      format.html { redirect_to @match, flash: { success: 'Goal for the second player!' } }
+      format.html { redirect_to @match }
       format.js
     end
   end

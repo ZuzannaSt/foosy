@@ -3,22 +3,25 @@
 <% else %>
     <h1 class="text-center"> Game on! </h1>
 <% end %>
+
 <div class="container text-center">
+  <div class="col-md-4 col-md-offset-4">
+    <div class="unobtrusive-flash-container"></div>
+  </div>
   <div class="row">
       <div class="col-md-6">
         <%= image_tag @first_player.avatar.url(:thumb), class: "img-circle" %>
         <h3><%= link_to @first_player.full_name, @first_player %></h3>
         <h1><span id="first-player-score"><%= @first_player.score(@match) %></span></h1>
         <% if @first_player.has_won?(@match) %>
-        <h4 id="first_won"> WINNER </h4>
+          <h4><span id="first_won"> WINNER </span></h4>
         <% @match.finish %>
         <% elsif @second_player.has_won?(@match) %>
-        <h4 id="first_lost"> looser </h4>
+          <h4 id="first_lost"> looser </h4>
         <% else %>
-        <%= button_to "Goal!", first_player_goal_match_path(@match), method: 'put', remote: true, id: 'first_player_goal', class: "btn btn-default btn-lg" %>
+          <%= button_to "Goal!", first_player_goal_match_path(@match), method: 'put', remote: true, id: 'first_player_goal', class: "btn btn-default btn-lg" %>
         <% end %>
     </div>
-
     <div class="col-md-6">
         <%= image_tag @second_player.avatar.url(:thumb), class: "img-circle" %>
         <h3><%= link_to @second_player.full_name, @second_player %></h3>
