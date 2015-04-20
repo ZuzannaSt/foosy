@@ -1,0 +1,5 @@
+<% if @first_player.has_won?(@match) || @second_player.has_won?(@match) %>
+    <h1 class="text-center"> Finished </h1>
+<% else %>
+    <h1 class="text-center"> Game is on! </h1>
+<% end %>

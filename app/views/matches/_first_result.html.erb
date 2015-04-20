@@ -1,0 +1,8 @@
+<% if @first_player.has_won?(@match) %>
+  <h4 id="first-won"><%= @first_player.winner %></h4>
+<% @match.finish %>
+<% elsif @second_player.has_won?(@match) %>
+  <h4 id="first-lost"><%= @first_player.looser %></h4>
+<% else %>
+  <%= button_to "Goal!", first_player_goal_match_path(@match), method: 'put', remote: true, id: 'first_player_goal', class: "btn btn-default btn-lg" %>
+<% end %>

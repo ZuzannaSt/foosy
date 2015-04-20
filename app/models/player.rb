@@ -14,6 +14,14 @@ class Player < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
+  def winner
+    "WINNER"
+  end
+
+  def looser
+    "looser"
+  end
+
   def score(match)
     score = player_matches.find_by(match_id: match.id).result
 

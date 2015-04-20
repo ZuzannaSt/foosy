@@ -39,7 +39,7 @@ class MatchesController < ApplicationController
 
   def second_player_goal
     @second_player.goal!(@match)
-    flash[:success] = 'Goal for the second player!'
+    flash[:notice] = 'Goal for the second player!'
 
     respond_to do |format|
       format.html { redirect_to @match }
