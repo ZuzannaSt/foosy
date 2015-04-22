@@ -1,4 +1,6 @@
 require 'capybara/rspec'
+require 'capybara/webkit/matchers'
+Capybara.javascript_driver = :webkit
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
@@ -8,6 +10,8 @@ RSpec.configure do |config|
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
   end
+
+  config.include(Capybara::Webkit::RspecMatchers, :type => :feature)
 
   def create_match
     @match = Match.create(date: Time.now)
