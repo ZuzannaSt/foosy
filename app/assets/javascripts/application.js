@@ -16,4 +16,5 @@
 //= require bootstrap-sprockets
 //= require unobtrusive_flash
 //= require unobtrusive_flash_bootstrap
+//= require bootbox
 //= require_tree .

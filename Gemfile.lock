@@ -42,6 +42,7 @@ GEM
       json
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootbox-rails (0.4.0)
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
@@ -219,6 +220,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootbox-rails
   bootstrap-sass
   byebug
   capybara

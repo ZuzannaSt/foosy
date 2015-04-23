@@ -33,6 +33,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
 gem 'will_paginate-bootstrap'
+gem 'bootbox-rails'
 gem "font-awesome-rails"
 gem 'paperclip'
 

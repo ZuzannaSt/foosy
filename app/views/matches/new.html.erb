@@ -4,23 +4,30 @@
       <h1> Create match </h1><br>
 
       <div class="form-horizontal">
-        <%= form_for @match do |f| %>
-        <%= render 'layouts/error_messages', object: @match %>
+        <%= form_for @match, html: { name: "newMatch" , onchange: "return validateCheckboxes(this);" }  do |f| %>
+          <%= render 'layouts/error_messages', object: @match %>
 
-        <div class="form-group">
-          <label> Choose two players </label><br>
-          <%= f.collection_check_boxes :player_ids, Player.all, :id, :full_name, class: 
-          "checkbox" %>
-        </div>
+          <div class="form-group">
+            <label> Choose two players </label><br>
+            <%= f.collection_check_boxes :player_ids, Player.all, :id, :full_name do |c| %>
+            <span class="checkbox">
+              <label>
+                <%= c.check_box class: "abc" %>
+                <%= c.text %>
+              </label>
+            </span>
+            <% end %>
+          </div>
 
-        <div class="form-group">
-          <label> Pick a starting date </label><br>
-          <%= f.datetime_select :date, class: "form-control" %>
-        </div>
+          <div class="form-group">
+            <label> Pick a starting date </label><br>
+            <%= f.datetime_select :date, class: "form-control" %>
+          </div>
 
-        <div class="form-group">
-          <%= f.submit class: "btn btn-success" %>
-        </div>
+          <div class="form-group">
+            <%= f.submit class: "btn btn-success", id: "matchSubmit" %>
+          </div>
+
         <% end %>
       </div>
     </div>
