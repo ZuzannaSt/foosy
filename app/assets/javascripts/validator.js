@@ -15,8 +15,8 @@ function validateCheckboxes(newMatch) {
     }
 
     bootbox.dialog({
-      message: "You must choose two players to start a game.",
-      title: "Holy Guacamole!",
+      message: "Remember that you must choose two players to start a game.",
+      title: "Ouups!",
       buttons: {
         success: {
           label: "OK, I got it",
@@ -27,7 +27,8 @@ function validateCheckboxes(newMatch) {
 
     return false;
   }
-  else {
+  
+  if (checkedBoxes == 2) {
     document.getElementById("matchSubmit").disabled = false;
     for( var j = 0; j < (checkBoxes.length -= 1); j++) {
       if ( checkBoxes[j].checked == false ) {
