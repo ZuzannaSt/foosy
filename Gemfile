@@ -69,4 +69,4 @@ group :test do
   gem 'database_cleaner'
 end
 
-gem 'pry-rails', :group => :development
+gem 'pry-rails', :group => [:development, :test]
