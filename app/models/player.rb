@@ -10,18 +10,6 @@ class Player < ActiveRecord::Base
     validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
 
-  def full_name
-    "#{first_name} #{last_name}"
-  end
-
-  def winner
-    "WINNER"
-  end
-
-  def looser
-    "looser"
-  end
-
   def score(match)
     score = player_matches.find_by(match_id: match.id).result
 

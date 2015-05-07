@@ -3,7 +3,7 @@ class MatchesController < ApplicationController
   before_action :set_players, only: [:show, :first_player_goal, :second_player_goal]
 
   def index
-    @matches = Match.all.order( "date DESC" ).paginate(:per_page => 10, :page => params[:page])
+    @matches = Match.all.order( "date DESC" ).paginate(:per_page => 10, :page => params[:page]).decorate
   end
 
   def show
@@ -53,11 +53,11 @@ class MatchesController < ApplicationController
     end
 
     def set_match
-      @match = Match.find(params[:id])
+      @match = Match.find(params[:id]).decorate
     end
 
     def set_players
-      @first_player = @match.players.first
-      @second_player = @match.players.last
+      @first_player = @match.players.first.decorate
+      @second_player = @match.players.last.decorate
     end
 end

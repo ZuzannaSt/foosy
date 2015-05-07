@@ -37,6 +37,8 @@ gem 'bootbox-rails'
 gem "font-awesome-rails"
 gem 'paperclip'
 
+gem 'draper'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

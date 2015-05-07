@@ -5,12 +5,12 @@
       <table class="table table-hover">
         <% @matches.each do |match| %>
         <tr>
-          <td>
-            <%= link_to match.date.to_formatted_s(:long), match, id: 'match_date' %>
+          <td id: 'match_date' >
+            <%= match.long_date %>
           </td>
           <% match.players.each do |player| %>
           <td>
-            <%= link_to player.full_name, player %>  
+            <%= player.full_name %>
             <span class="badge">
               <%= player.score(match) %>
             </span>

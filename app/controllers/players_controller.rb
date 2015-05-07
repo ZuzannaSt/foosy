@@ -3,7 +3,7 @@ class PlayersController < ApplicationController
 
 
   def index
-    @players = Player.all  
+    @players = Player.all.decorate
   end
 
   def show
@@ -40,6 +40,6 @@ class PlayersController < ApplicationController
     end
 
     def set_player
-      @player = Player.find(params[:id])
+      @player = Player.find(params[:id]).decorate
     end
 end

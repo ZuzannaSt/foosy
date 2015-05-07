@@ -6,11 +6,11 @@
     <% slice.each do |player| %>
     <div class="col-md-3">
     <%= image_tag player.avatar.url(:thumb), class: "img-circle" %>
-    <h4><%= link_to player.full_name, player  %></h4>
+    <h4><%= player.full_name  %></h4>
       <ul class="list-group list-unstyled">
         <% player.matches.each do |match| %>
         <li class="list-group-item">
-          <span class="badge"><%= player.score(match) %></span>  
+          <span class="badge"><%= player.score(match) %></span>
           <%= link_to match.date.to_formatted_s(:long), match %>
         </li>
 
