@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 col-md-offset-1">
-      <h1>Matches</h1>
+      <h1 class="text-center">Matches</h1>
       <table class="table table-hover">
         <% @matches.each do |match| %>
         <tr>
@@ -10,16 +10,16 @@
           </td>
           <% match.players.each do |player| %>
           <td>
-            <%= player.full_name %>
             <span class="badge">
               <%= player.score(match) %>
             </span>
+            <%= player.full_name %>
           </td>
           <%end%>
         </tr>
         <% end %>
       </table>
-      <div><%= will_paginate @matches, renderer: BootstrapPagination::Rails %></div>
+      <div class="text-center"><%= will_paginate @matches, renderer: BootstrapPagination::Rails %></div>
     </div>
   </div>
 </div>
