@@ -6,9 +6,9 @@
 
         <div>
           <% @top_players.each do |player| %>
-          <%= image_tag player.avatar.url(:thumb), class: "img-circle" %>
+          <%= player.small_avatar %>
           <h4>
-            <%= link_to player.full_name, player %>
+            <%= player.full_name %>
           </h4>
           <% end %>
         </div>
@@ -21,7 +21,7 @@
         <div>
           <% @top_day.each do |player| %>
           <h4>
-            <%= link_to player.full_name, player %>
+            <%= player.full_name %>
           </h4>
           <% end %>
         </div>
@@ -34,7 +34,7 @@
         <div>
           <% @top_active.each do |player| %>
           <h4>
-            <%= link_to player.full_name, player %>
+            <%= player.full_name %>
           </h4>
           <% end %>
         </div>

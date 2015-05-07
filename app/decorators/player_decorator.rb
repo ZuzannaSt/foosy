@@ -14,13 +14,6 @@ class PlayerDecorator < ApplicationDecorator
     h.image_tag model.avatar.url(:medium), class: "img-circle"
   end
 
-  # def current_or_new_avatar
-  #   if model.avatar.exists?
-  #     h.content_tag(:label, "Current avatar")
-  #     h.content_tag small_avatar
-  #   end
-  # end
-
   def winner
     "WINNER"
   end

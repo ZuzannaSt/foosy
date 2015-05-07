@@ -5,10 +5,10 @@
       <% @top_players.each do |player| %>
       <div class="row">
         <div class="col-md-4">
-          <%= image_tag player.avatar.url(:thumb), class: "img-circle" %>
+          <%= player.small_avatar %>
         </div>
         <div class="col-md-6"><br>
-         <%= link_to player.full_name, player %>
+         <%= player.full_name %>
        </div>
      </div>
      <% end %>
@@ -19,7 +19,7 @@
       <% @recent_games.each do |match| %>
       <tr>
         <td>
-          <%= match.date.to_formatted_s(:long) %>
+          <%= match.long_date %>
         </td>
         <td>
           <%= link_to 'Preview >>> ', match %>

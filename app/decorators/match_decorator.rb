@@ -1,6 +1,5 @@
 class MatchDecorator < ApplicationDecorator
   delegate_all
-
   decorates_association :players
 
   def long_date

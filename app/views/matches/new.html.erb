@@ -9,7 +9,7 @@
 
           <div class="form-group">
             <label> Choose two players </label><br>
-            <%= f.collection_check_boxes :player_ids, Player.all, :id, :full_name do |c| %>
+            <%= f.collection_check_boxes :player_ids, Player.all.decorate, :id, :full_name do |c| %>
             <span class="checkbox">
               <label>
                 <%= c.check_box %>
