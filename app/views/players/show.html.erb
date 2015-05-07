@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-4 col-offset-1">
-      <%= image_tag @player.avatar.url(:medium), class: "img-circle" %>
+      <%= @player.medium_avatar %>
     </div>
     <div class="col-md-4">
       <h1>
@@ -13,7 +13,7 @@
       <% @player.matches.each do |match| %>
       <ul class="list-unstyled">
         <li>
-          <span class="badge badge-large"><%= @player.score(match) %></span> 
+          <span class="badge badge-large"><%= @player.score(match) %></span>
           <%= link_to match.date.to_formatted_s(:long), match %>
         </li>
       </ul>
@@ -22,11 +22,11 @@
     <div class="col-md-3"><br>
       <div class="text-center">
         <ul class="list-unstyled">
-          <li class="well"> 
-            <h3>Win rate</h3> 
+          <li class="well">
+            <h3>Win rate</h3>
             <span class="badge badge-large"><%= @player.win_rate %></span><br>
           </li>
-          <li class="well"> 
+          <li class="well">
             <h3>Matches won</h3>
             <span class="badge badge-large"><%= @player.matches_won %></span><br>
           </li>

@@ -7,17 +7,25 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <%= image_tag @first_player.avatar.url(:thumb), class: "img-circle" %>
+      <%= @first_player.small_avatar %>
       <h3><%= @first_player.full_name %></h3>
-      <h1><span id="first-player-score"><%= @first_player.score(@match) %></span></h1>
+      <h1>
+        <span id="first-player-score">
+          <%= @first_player.score(@match) %>
+          </span>
+        </h1>
       <div id="first-result">
         <%= render "matches/first_result" %>
       </div>
     </div>
     <div class="col-md-6">
-        <%= image_tag @second_player.avatar.url(:thumb), class: "img-circle" %>
+        <%= @second_player.small_avatar %>
         <h3><%= @second_player.full_name %></h3>
-        <h1><span id="second-player-score"><%= @second_player.score(@match) %></span></h1>
+        <h1>
+          <span id="second-player-score">
+            <%= @second_player.score(@match) %>
+          </span>
+        </h1>
         <div id="second-result">
           <%= render "matches/second_result" %>
         </div>

@@ -16,7 +16,7 @@
   <div class="form-group">
     <% if @player.avatar.exists? %>
       <label> Current avatar </label><br>
-      <%= image_tag @player.avatar.url(:thumb), class: "img-circle" %>
+      <%= @player.small_avatar %>
     <% end %>
       <%= f.file_field :avatar %>
   </div>
