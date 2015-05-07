@@ -1,6 +1,5 @@
-class MatchDecorator < Draper::Decorator
+class MatchDecorator < ApplicationDecorator
   delegate_all
-  delegate :current_page, :per_page, :offset, :total_entries, :total_pages
 
   decorates_association :players
 
