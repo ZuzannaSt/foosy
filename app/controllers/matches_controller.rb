@@ -16,14 +16,10 @@ class MatchesController < ApplicationController
   def create
     @match = Match.new(match_params)
 
-    if @match.has_two_players?
-      if @match.save
-        redirect_to @match, notice: 'Match was successfully created.'
-      else
-        render action: 'new'
-      end
+    if @match.save
+      redirect_to @match, notice: 'Match was successfully created.'
     else
-      render action: 'new', notice: 'Match has to have two players.'
+      render action: 'new'
     end
   end
 

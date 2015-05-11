@@ -1,6 +1,6 @@
 describe Player do
 
-  before(:each) { @player = build(:player_one) } 
+  before(:each) { @player = build(:player_one) }
 
   subject { @player }
 
@@ -37,9 +37,5 @@ describe Player do
 
   it "last name should be Doe" do
     expect(@player.last_name).to eq('Doe')
-  end
-
-  it "full name should be John Doe" do
-    expect(@player.full_name).to eq('John Doe')
   end
 end

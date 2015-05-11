@@ -1,11 +1,10 @@
 describe Match do
 
-  before(:each) { @match = build(:match) }  
+  before(:each) { @match = build(:match) }
 
   subject { @match }
 
   it { should respond_to(:date) }
-  it { should be_valid }
 
   it "should not be valid without #date" do
     @match.date = nil

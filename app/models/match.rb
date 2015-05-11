@@ -4,8 +4,7 @@ class Match < ActiveRecord::Base
   has_many :players, through: :player_matches
 
   validates :date, presence: true
-
-  before_save :has_two_players?
+  validates :players, presence: true, length: {minimum: 2, maximum: 2, message: "number must equal 2"}
 
   scope :most_recent, -> { order(created_at: :desc).limit(10) }
   scope :played_today, -> { where("date >= ? AND date < ?", Date.today, Date.tomorrow) }

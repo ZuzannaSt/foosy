@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325173303) do
+ActiveRecord::Schema.define(version: 20150511134613) do
 
   create_table "matches", force: :cascade do |t|
     t.datetime "date"
@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 20150325173303) do
   create_table "player_matches", force: :cascade do |t|
     t.integer  "player_id",  limit: 4
     t.integer  "match_id",   limit: 4
-    t.integer  "result",     limit: 4
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.integer  "result",     limit: 4, default: 0
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
   add_index "player_matches", ["match_id"], name: "index_player_matches_on_match_id", using: :btree
