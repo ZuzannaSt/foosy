@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require bootstrap
 //= require unobtrusive_flash
 //= require unobtrusive_flash_bootstrap
 //= require bootbox
