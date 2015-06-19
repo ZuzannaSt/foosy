@@ -1,5 +1,5 @@
 # foosy
-Your new favourite foosball tracker.
+Your new favourite foosball tracker. 
 
 # ABOUT
 Application that allows you to track foosball games. Create players and games and score up to 10 goals to win. View ranking page for top players of the day and of all time and make sure you are the most active player of the day! Styled with Bootstrap, additionally validated with JS, response prepared with AJAX, decorated with Draper, tested with RSpec and Capybara.
