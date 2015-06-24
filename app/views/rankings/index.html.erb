@@ -8,7 +8,7 @@
           <% @top_players.each do |player| %>
           <%= player.small_avatar %>
           <h4>
-            <%= player.full_name %>
+            <%= player.link_to_full_name %>
           </h4>
           <% end %>
         </div>
@@ -21,7 +21,7 @@
         <div>
           <% @top_day.each do |player| %>
           <h4>
-            <%= player.full_name %>
+            <%= player.link_to_full_name %>
           </h4>
           <% end %>
         </div>
@@ -34,7 +34,7 @@
         <div>
           <% @top_active.each do |player| %>
           <h4>
-            <%= player.full_name %>
+            <%= player.link_to_full_name %>
           </h4>
           <% end %>
         </div>
