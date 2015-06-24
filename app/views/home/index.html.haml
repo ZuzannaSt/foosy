@@ -1,0 +1,22 @@
+.container
+  .row
+    .col-md-4.col-md-offset-1
+      %h1 Our top players
+      %br/
+      - @top_players.each do |player|
+        .row
+          .col-md-4
+            = player.small_avatar
+          .col-md-6
+            %br/
+            = player.link_to_full_name
+    .col-md-5
+      %h1 Recent games
+      %br/
+      %table.table.table-striped
+        - @recent_games.each do |match|
+          %tr
+            %td
+              = match.long_date
+            %td
+              = link_to 'Preview >>> ', match

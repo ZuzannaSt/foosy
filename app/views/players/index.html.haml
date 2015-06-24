@@ -1,0 +1,13 @@
+.container
+  %h1.text-center Players
+  - @players.each_slice(4) do |slice|
+    .row.text-center
+      - slice.each do |player|
+        .col-md-3
+          = player.small_avatar
+          %h4= player.link_to_full_name
+          %ul.list-group.list-unstyled
+            - player.matches.each do |match|
+              %li.list-group-item
+                %span.badge= player.score(match)
+                = match.long_date

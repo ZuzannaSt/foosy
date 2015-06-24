@@ -1,0 +1,5 @@
+.container
+  - if object.errors.any?
+    %ul
+      - object.errors.full_messages.each do |msg|
+        %li= msg

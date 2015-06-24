@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-md-8.col-md-offset-1
+      %h1.text-center Matches
+      %table.table.table-hover
+        - @matches.each do |match|
+          %tr
+            %td
+              = match.long_date
+            - match.players.each do |player|
+              %td
+                %span.badge
+                  = player.score(match)
+                = player.link_to_full_name
+      .text-center= will_paginate @matches, renderer: BootstrapPagination::Rails

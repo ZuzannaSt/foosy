@@ -1,0 +1,6 @@
+$( document ).ready(function(){
+$("#second-player-score").text("#{@second_player.score(@match)}");
+$("#match-result").html('#{escape_javascript (render "matches/match_result")}');
+$("#first-result").html('#{escape_javascript (render "matches/first_result")}');
+$("#second-result").html('#{escape_javascript (render "matches/second_result")}');
+});

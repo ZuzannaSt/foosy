@@ -1,0 +1,17 @@
+= form_for @player do |f|
+  = render 'layouts/error_messages', object: @player
+  .form-horizontal
+    .form-group
+      %label First name
+      = f.text_field :first_name, class: "form-control"
+    .form-group
+      %label Last name
+      = f.text_field :last_name, class: "form-control"
+    .form-group
+      - unless @player.avatar.nil?
+        %label Current avatar
+        %br/
+        = @player.small_avatar
+      = f.file_field :avatar
+    .form-group.text-center
+      = f.submit class: "btn btn-success"

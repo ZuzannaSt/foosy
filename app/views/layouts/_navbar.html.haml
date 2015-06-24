@@ -1,0 +1,8 @@
+%nav.navbar.navbar-inverse{:role => "navigation"}
+  .container
+    %ul.nav.navbar-nav
+      %li= link_to "Foosy", root_path, class: "navbar-brand"
+      %li= link_to "Ranking", ranking_path
+      %li= link_to "Games", matches_path
+      %li= link_to "Players", players_path
+      %li= link_to "New player", new_player_path(@player)

@@ -1,0 +1,24 @@
+.container.text-center
+  .row
+    .col-md-4
+      .well
+        %h1 Top of all time
+        %div
+          - @top_players.each do |player|
+            = player.small_avatar
+            %h4
+              = player.link_to_full_name
+    .col-md-4
+      .well
+        %h2 Top of the day
+        %div
+          - @top_day.each do |player|
+            %h4
+              = player.link_to_full_name
+    .col-md-4
+      .well
+        %h2 Most active
+        %div
+          - @top_active.each do |player|
+            %h4
+              = player.link_to_full_name

@@ -1,0 +1,26 @@
+.container
+  .row
+    .col-md-3.col-offset-1
+      = @player.medium_avatar
+    .col-md-5
+      %h1
+        = @player.full_name
+        = link_to edit_player_path(@player), class: "btn btn-default button-xs" do
+          %span.glyphicon.glyphicon-pencil
+      - @player.matches.each do |match|
+        %ul.list-unstyled
+          %li
+            %span.badge.badge-large= @player.score(match)
+            = match.long_date
+    .col-md-4
+      %br/
+      .text-center
+        %ul.list-unstyled
+          %li.well
+            %h3 Win rate
+            %span.badge.badge-large= @player.win_rate
+            %br/
+          %li.well
+            %h3 Matches won
+            %span.badge.badge-large= @player.matches_won
+            %br/
