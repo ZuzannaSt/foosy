@@ -24,7 +24,7 @@ gem 'bootstrap-sass'
 gem 'will_paginate-bootstrap'
 gem 'bootbox-rails'
 gem 'font-awesome-rails'
-gem 'paperclip'
+gem 'carrierwave'
 gem 'cloudinary'
 gem 'dotenv-rails'
 gem 'draper'
@@ -32,7 +32,7 @@ gem 'draper'
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
-  gem 'spring'
+  gem 'spring', '~>1.3.6'
 end
 
 group :development, :test do
