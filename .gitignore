@@ -23,6 +23,8 @@ db/*.sqlite3
 .sass-cache
 /config/config.yml
 /config/database.yml
+/config/secrets.yml
+
 /db/*.javadb/
 /db/*.sqlite3
 /public/cache
