@@ -7,6 +7,6 @@ FactoryGirl.define do
 
   factory :player_two, class: Player do
     first_name "Jane"
-    last_name "Doll"   
+    last_name "Doll"
   end
 end

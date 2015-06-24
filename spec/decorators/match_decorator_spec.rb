@@ -1,8 +1,11 @@
 require 'spec_helper'
 
 describe MatchDecorator do
-  it "long_date should link to match" do
-    match =  build(:match).decorate
-    expect(match.long_date).to include('<a href="/matches">')
+  let(:match) { described_class.new(build(:match)) }
+
+  describe "#long date" do
+    it "links to match" do
+      expect(match.long_date).to include('<a href="/matches">')
+    end
   end
 end
