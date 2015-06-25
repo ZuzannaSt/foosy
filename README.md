@@ -2,7 +2,7 @@
 Your new favourite foosball tracker. 
 
 # ABOUT
-Application that allows you to track foosball games. Create players and games and score up to 10 goals to win. View ranking page for top players of the day and of all time and make sure you are the most active player of the day! Styled with Bootstrap, additionally validated with JS, response prepared with AJAX, decorated with Draper, tested with RSpec and Capybara.
+Application that allows you to track foosball games. Create players and games and score up to 10 goals to win. View ranking page for top players of the day and of all time and make sure you are the most active player of the day! Styled with Bootstrap, additionally validated with JS, response prepared with AJAX, decorated with Draper, tested with RSpec and Capybara. Foosy now runs with Cloudinary and Chartkick, so it has cloud-based photo storage and some cool charts to show!
 
 # CONFIGURE:
 
@@ -24,5 +24,5 @@ http://foosy.herokuapp.com
 # Cheers!
 
 # ToDo later:
-* connect with cloud to store images for Heroku
 * minimize SQL requests
+* repair JS tests
