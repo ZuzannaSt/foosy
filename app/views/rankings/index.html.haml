@@ -8,6 +8,17 @@
             = player.small_avatar
             %h4
               = player.link_to_full_name
+    .col-md-8
+      %br
+      %h2 Win rate
+      %h4 based on all scores
+      =column_chart @win_rate, max: 10, colors: ["#d9534f"]
+  %br
+
+  .row
+    .col-md-8
+      %h3 Todays goals scored
+      =bar_chart @goals_scored, colors: ["#f0ad4e"]
     .col-md-4
       .well
         %h2 Top of the day
@@ -15,6 +26,8 @@
           - @top_day.each do |player|
             %h4
               = player.link_to_full_name
+  %br
+  .row
     .col-md-4
       .well
         %h2 Most active
@@ -22,3 +35,6 @@
           - @top_active.each do |player|
             %h4
               = player.link_to_full_name
+    .col-md-8
+      %h2 Matches played
+      =pie_chart @matches_played
