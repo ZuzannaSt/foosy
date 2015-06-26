@@ -5,7 +5,7 @@ describe MatchDecorator do
 
   describe "#long date" do
     it "links to match" do
-      expect(match.long_date).to include('<a href="/matches">')
+      expect(match.long_date).to have_css("a#match_date")
     end
   end
 end
