@@ -30,6 +30,7 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'dotenv-rails'
 gem 'draper'
+gem 'travis'
 
 group :development, :test do
   gem 'byebug'
