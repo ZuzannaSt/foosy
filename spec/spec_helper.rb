@@ -13,6 +13,13 @@ RSpec.configure do |config|
 
   config.include(Capybara::Webkit::RspecMatchers, :type => :feature)
 
+  config.before :each, :js, type: :feature do |example|
+  if example.metadata[:js]
+    page.driver.allow_url("http://www.google.com/jsapi")
+    page.driver.block_unknown_urls
+  end
+end
+
   def create_match
     @match = Match.create(date: Time.now)
     @p1 = Player.create(first_name: 'John', last_name: 'Doe')

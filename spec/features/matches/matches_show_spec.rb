@@ -22,7 +22,7 @@ describe "matches show" do
     click_button :second_player_goal
     expect(page).to have_content 'Goal for the second player!'
   end
-
+  
   it "first player won", js: true do
     set_visit_expect
     10.times{ click_button :first_player_goal }

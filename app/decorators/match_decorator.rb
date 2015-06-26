@@ -3,6 +3,6 @@ class MatchDecorator < ApplicationDecorator
   decorates_association :players
 
   def long_date
-    h.link_to model.date.to_formatted_s(:long), model
+    h.link_to model.date.to_formatted_s(:long), model, id: "match_date"
   end
 end
