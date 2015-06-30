@@ -3,6 +3,7 @@
     #match-result
       = render "matches/match_result"
     .unobtrusive-flash-container
+
   .row
     .col-md-6
       = @first_player.small_avatar
@@ -12,6 +13,7 @@
           = @first_player.score(@match)
       #first-result
         = render "matches/first_result"
+
     .col-md-6
       = @second_player.small_avatar
       %h3= @second_player.link_to_full_name
