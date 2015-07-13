@@ -3,7 +3,7 @@ class PlayersController < ApplicationController
 
 
   def index
-    @players = Player.all.decorate
+    @players = Player.all.includes(:matches).decorate
   end
 
   def show

@@ -4,6 +4,7 @@ gem 'rails', '4.2.0'
 
 group :development do
   gem 'mysql2'
+  gem 'bullet'
 end
 
 group :production do

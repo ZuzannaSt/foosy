@@ -34,13 +34,13 @@ class Player < ActiveRecord::Base
   end
 
   def matches_played
-    matches.count
+    matches.includes(:players).count
   end
 
   def matches_won
     matches_won = []
 
-    matches.each do |match|
+    matches.includes(:players).each do |match|
       if has_won?(match)
         matches_won << match
       end
@@ -51,7 +51,7 @@ class Player < ActiveRecord::Base
   def goals_scored
     scored = 0
 
-    matches.each do |match|
+    matches.includes(:players).each do |match|
       scored += score(match)
     end
     scored
@@ -61,7 +61,7 @@ class Player < ActiveRecord::Base
     scored = 0
     lost = 0
 
-    matches.each do |match|
+    matches.includes(:players).each do |match|
       match.players.each do |player|
         if score(match) == player.score(match)
           scored += score(match)
