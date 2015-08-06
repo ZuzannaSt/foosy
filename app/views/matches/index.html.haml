@@ -1,8 +1,13 @@
 .container
   .row
-    .col-md-8.col-md-offset-1
-      %h1.text-center Matches
-      %table.table.table-hover
+    .col-md-8.col-md-offset-2
+      %h1.text-center List of all matches
+      %table.table.table-hover.table-responsive
+        %thead
+          %th Date
+          %th First player
+          %th Second player
+        %tbody
         - @matches.each do |match|
           %tr
             %td
