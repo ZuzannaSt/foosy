@@ -1,0 +1,12 @@
+.pagination > li > a, .pagination > li  {
+  color: #4c4c4c;
+}
+
+.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus  {
+  color: #323232;
+}
+
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+  background-color: #4c4c4c;
+  border-color: #4c4c4c;
+}
