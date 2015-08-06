@@ -10,6 +10,10 @@ class PlayerDecorator < ApplicationDecorator
     h.link_to "#{model.first_name} #{model.last_name}", model
   end
 
+  def mini_avatar
+    h.image_tag model.avatar.url(:mini), class: "img-circle"
+  end
+
   def small_avatar
     h.image_tag model.avatar.url(:thumb), class: "img-circle"
   end

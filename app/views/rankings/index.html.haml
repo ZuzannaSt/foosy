@@ -3,10 +3,10 @@
     .col-md-4
       .well
         %h1 Top of all time
-        %div
+        .top-players
           - @top_players.each do |player|
-            = player.small_avatar
             %h4
+              = player.mini_avatar
               = player.link_to_full_name
     .col-md-8
       %br
@@ -36,5 +36,5 @@
             %h4
               = player.link_to_full_name
     .col-md-8
-      %h2 Matches played
+      %h3 Matches played
       =pie_chart @matches_played
